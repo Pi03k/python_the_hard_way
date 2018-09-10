@@ -13,6 +13,8 @@ def eraseFile(filename):
 
 
 print(f"We are going to erase {filename}")
+print(f"Contents of {filename}")
+print(open(filename).read())
 answer = input('[Y/n] ')
 
 if answer == 'Y':
