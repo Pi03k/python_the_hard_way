@@ -2,8 +2,6 @@
 
 from sys import argv
 
-script, filename = argv
-
 
 def eraseFile(filename):
     print("Erasing file")
@@ -12,10 +10,16 @@ def eraseFile(filename):
     file.close()
 
 
-print(f"We are going to erase {filename}")
-print(f"Contents of {filename}")
-print(open(filename).read())
-answer = input('[Y/n] ')
+def main(filename):
+    print(f"We are going to erase {filename}")
+    print(f"Contents of {filename}")
+    print(open(filename).read())
+    answer = input('[Y/n] ')
 
-if answer == 'Y':
-    eraseFile(filename)
+    if answer == 'Y':
+        eraseFile(filename)
+
+
+if __name__ == "__main__":
+    filename = argv[1]
+    main(filename)
