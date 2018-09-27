@@ -5,9 +5,9 @@ import sys
 
 def main(language_file, encoding, errors):
     line = language_file.readline()
-    if line:
+    while line:
         print_line(line, encoding, errors)
-        return main(language_file, encoding, errors)
+        line = language_file.readline()
 
 
 def print_line(line, encoding, errors):
